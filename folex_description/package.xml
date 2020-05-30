@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>folex_description</name>
+  <version>0.1.0</version>
+  <description>
+    3D models of the FOLEX for simulation and visualization
+  </description>
+
+  <!-- License -->
+  <license>TODO</license>
+
+  <!-- Author and Maintainer -->
+  <author email="danichoi737@gmail.com">Hyun-Wook Choi</author>
+  <maintainer email="danichoi737@gmail.com">Hyun-Wook Choi</maintainer>
+
+  <!-- URL -->
+  <url type="repository">https://github.com/danichoi737/folex.git</url>
+  <url type="website">https://danichoi737.tistory.com/</url>
+
+  <!-- Dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+
+  <!-- Export -->
+  <export></export>
+</package>

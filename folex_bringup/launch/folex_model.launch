@@ -1,0 +1,10 @@
+<launch>
+	<arg name="robot_name"		default="folex"/>
+
+	<node pkg="joint_state_publisher"	type="joint_state_publisher" name="joint_state_publisher">
+		<param name="use_gui" value="true"/>
+		<param name="rate" value="50"/>
+	</node>
+
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find folex_description)/rviz/folex.rviz"/>
+</launch>
