@@ -217,19 +217,26 @@ bool FolexDynamixelDriver::writeValue(uint8_t id, uint16_t address, uint32_t val
   return result;
 }
 
+uint16_t FolexDynamixelDriver::convertRadianToValue(double radian)
+{
+	uint16_t value = 0;
+
+	value = 512 + ((radian * (180 / PI)) / UNIT_AX_ANGLE);
+
+	return value;
+}
+
 uint16_t FolexDynamixelDriver::convertRpmToValue(uint16_t dxl_model, double rpm)
 {
   uint16_t value = 0;
 
   if (dxl_model == AX_12A)
   {
-    // AX-12A Units : 0.111 RPM / Value
-    value = rpm / 0.111;
+    value = rpm / UNIT_AX_RPM;
   }
   else if (dxl_model == XL430_W250)
   {
-    // XL430 Units : 0.229 RPM / Value
-    value = rpm / 0.229;
+    value = rpm / UNIT_XL_RPM;
   }
   else
   {

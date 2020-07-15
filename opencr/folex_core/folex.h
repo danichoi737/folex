@@ -5,6 +5,7 @@
 
 #include "folex_diagnosis.h"
 #include "folex_dynamixel_driver.h"
+#include "folex_kinematics.h"
 
 typedef struct
 {
@@ -19,8 +20,7 @@ class Folex
 private:
 	FolexDiagnosis diagnosis;
 	FolexDynamixelDriver dynamixel_driver;
-
-
+	FolexKinematics kinematics;
 
 
 public:
@@ -28,9 +28,7 @@ public:
 	~Folex();
 
 	bool initFolex();
-
-
-
+	void testFolex();
 };
 
 

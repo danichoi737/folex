@@ -16,6 +16,9 @@
 #define ADDR_AX_MOVING_SPEED      32
 #define ADDR_AX_PRESENT_POSITION  36
 #define ADDR_AX_PRESENT_SPEED     38
+// Units
+#define UNIT_AX_ANGLE             0.293255132
+#define UNIT_AX_RPM               0.111
 
 /* DYNAMIXEL XL430-W250-T */
 // http://emanual.robotis.com/docs/en/dxl/x/xl430-w250/#control-table
@@ -26,6 +29,9 @@
 #define ADDR_XL_PROFILE_VELOCITY  112
 #define ADDR_XL_GOAL_POSITION     116
 #define ADDR_XL_PRESENT_POSITION  132
+// Units
+#define UNIT_XL_ANGLE             0.087912088
+#define UNIT_XL_RPM               0.229
 
 /* DYNAMIXEL ID */
 // FRONT-LEFT
@@ -66,6 +72,9 @@
 #define WORD                      2
 #define DWORD                     4
 
+//
+#define PI                        3.14159265
+
 
 class FolexDynamixelDriver
 {
@@ -90,6 +99,7 @@ public:
   bool setTorque(uint8_t id, bool onoff);
   bool enableDynamixel();
   bool disableDynamixel();
+  uint16_t convertRadianToValue(double radian);
   uint16_t convertRpmToValue(uint16_t dxl_model, double rpm);
   //bool writePosition();
 };
